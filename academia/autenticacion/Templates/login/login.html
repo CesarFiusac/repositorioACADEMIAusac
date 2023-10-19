@@ -1,0 +1,30 @@
+{% extends "academiausac/base.html"%}
+
+{% load static%}
+
+{% load crispy_forms_tags %}
+
+{% block content%}
+
+<form method="post" action="" style="color: beige;">
+{% csrf_token %}
+
+{% if messages %}
+
+    {% for mensaje in messages %}
+    <span class="alert alert-{{mensaje.tags}}">{{mensaje}}</span>
+    
+
+    {% endfor %}
+
+{%endif%}
+<br/><br/><br/>
+{{ form }}
+
+
+
+<button type="submit" class="btn btn-success">Iniciar sesion</button>
+
+</form>
+
+{% endblock %}

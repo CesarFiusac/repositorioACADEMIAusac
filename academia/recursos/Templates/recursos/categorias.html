@@ -1,0 +1,34 @@
+{% extends "academiausac/base.html"%}
+
+{% load static%}
+{% block content%}
+  {% for Archivo in adrive %}
+  <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{Archivo.imagen.url}}" alt="" style="width: 30%;">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-lower">{{Archivo.titulo}}</span>
+            <span class="section-heading-upper">Contenido o link: {{Archivo.contenido}}</span>
+          </h2> 
+          <div style="text-align: left;">
+            Autor: {{Archivo.autor}}
+          </div>        
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+
+  <section>
+    <div style="width: 75%; background-color: bisque; margin:auto; text-align: center; color:black">
+      Categorias:
+      {% for Archivo in adrive %}
+        {% for categoria in Archivo.archivocurso.all %}
+        {{categoria.nombrearchivo}} &nbsp;&nbsp;&nbsp;&nbsp;
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}
