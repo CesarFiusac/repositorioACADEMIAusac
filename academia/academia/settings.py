@@ -89,10 +89,10 @@ WSGI_APPLICATION = 'academia.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "academiaingenieria",
+        "NAME": "postgres",
         "USER": "postgres",
-        "PASSWORD": "12345",
-        "HOST": "127.0.0.1",
+        "PASSWORD": "nicolas37289915",
+        "HOST": "academiausac.ck7yyzhrlc9a.us-east-2.rds.amazonaws.com",
         "PORT": "5432",
     }
 }
